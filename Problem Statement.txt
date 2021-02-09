@@ -10,12 +10,14 @@ Input:
             1. MBTI
 
             2. CEI-Curiousity and Exploration Inventory (via the Teacher) on a scale of 1-7
+
                 1. actively seeks information                           [1-7]
                 2. involvement                                          [1-7]
                 3. new opportunities/information/people/resources       [1-7]
                 4. (-ve) usually not into new things                    [1-7]
                 5. interruptability / distraction                       [1-7]
                 6. consistent in looking for new things / experiences   [1-7]
+                    
                     EXPLORATION = (1+3-4) [18.74 <= EXPLORATION_AVG <= 19.97]
                     ABSORPTION = (2+5+6+7)[13.16 <=  ABSORPTION_AVG <= 15.44]
                     CURIOUSITY_AVG = (EXPLORATION_AVG + ABSORPTION_AVG) [32.70 <= CURIOUSITY_AVG <= 34.18]
