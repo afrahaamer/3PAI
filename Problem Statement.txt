@@ -15,7 +15,7 @@ Input:
     # Interest      Float
 
 # Create class Teacher
-
+    
 
     Subtask Intelligence:
         Student takes a test in the Subject
