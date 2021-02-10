@@ -58,8 +58,8 @@ def blooms(text):
 	for x in nltk_tokens:
 		nltk_l_tokens.append(x.lower()) 
 		
-	print(nltk_tokens)
-	print(nltk_l_tokens)
+	#print(nltk_tokens)
+	#print(nltk_l_tokens)
 
 	level1=["choose","define",'find','how','label','list','match','name','omit','recall','relate','select','show',
 	'spell','tell','what','why','when','who','where','which']
