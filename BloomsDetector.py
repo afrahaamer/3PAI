@@ -8,6 +8,7 @@ from playsound import playsound
 import docx2txt
 
 choice = input("Type of file\n1. PDF\n2. Word Document\n")
+text = ""
 
 if int(choice) == 1:
 	# path to PDF file
@@ -21,34 +22,7 @@ if int(choice) == 1:
 			text = extract_text(pdf_file)
 			return text
 		pdfminer(pdf_file)
-		
-'''
-		def pypdf2(pdfdf_file):
-			py_pdf_file = open(pdf_file, 'rb') 
-			# create PDFFileReader object to read the file
-			pdfReader = PdfFileReader(py_pdf_file)
-			# obtain no, of pages
-			numOfPages = pdfReader.getNumPages()
-			# final return text string
-			#text = "PDF File name : " + str(pdfReader.getDocumentInfo().title)
-			# text list to contain all pdf text 
-			text_lst = list()
-			# itterate over all pages
-			for i in range(0, numOfPages):
-				# obtain page no.
-				pageObj = pdfReader.getPage(i)
-				# append page content to list
-				text_lst.append('\n' + pageObj.extractText())
-			# close the PDF file object
-			py_pdf_file.close()
-			# join all pages text into single string variable
-			text_temp = " ".join(text_lst)
-			#return text + text_temp
-			return text_temp
-'''
-		
-
-
+	
 if int(choice) == 2:
 	docx_path = input('Enter Docx path\n')
 	if docx_path != '':
@@ -103,22 +77,5 @@ def blooms(text):
 	print("The paper has %d questions that come under the category of creation."%c6)
 
 	l2=sorted(l1)
-'''
-	audio_ouput = None
 
-	if l2[-1]==c1:
-	    audio_ouput = "So, the paper is of level 1, you can remember the subject and attempt"
-	if l2[-1]==c2:
-	    audio_ouput ="Hence, the paper is of level 2, you have to understand the concept"
-	if l2[-1]==c3:
-	    audio_ouput = "So, paper is of level 3, you have to know the application."
-	if l2[-1]==c4:
-	    audio_ouput = "Hence, paper is of level 4, you need to be able to analyze the subject"
-	if l2[-1]==c5:
-	    audio_ouput = "So,the paper is of level 5, you need to be thorough with the concepts for evaluation."
-	if l2[-1]==c6:
-	    audio_ouput = "Hence, paper is of level 6, you can only attempt if you master the subject"
-
-	pyttsx3(audio_ouput)
-'''
 blooms(text)
