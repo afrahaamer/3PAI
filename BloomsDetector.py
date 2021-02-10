@@ -3,28 +3,49 @@ import os
 import nltk
 from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
-from gtts import gTTS
-from playsound import playsound
 import docx2txt
 
 choice = input("Type of file\n1. PDF\n2. Word Document\n")
-text = ""
 
 if int(choice) == 1:
 	# path to PDF file
-	pdf_file = input('Enter PDF path\n')
+	pdf_file = input('Enter PDF path')
 	if pdf_file != '':
 		# obtain file name 
 		base = os.path.basename(pdf_file)
 		file_name, file_format = os.path.splitext(base)
+
+		def pypdf2(pdfdf_file):
+			py_pdf_file = open(pdf_file, 'rb') 
+			# create PDFFileReader object to read the file
+			pdfReader = PdfFileReader(py_pdf_file)
+			# obtain no, of pages
+			numOfPages = pdfReader.getNumPages()
+			# final return text string
+			#text = "PDF File name : " + str(pdfReader.getDocumentInfo().title)
+			# text list to contain all pdf text 
+			text_lst = list()
+			# itterate over all pages
+			for i in range(0, numOfPages):
+				# obtain page no.
+				pageObj = pdfReader.getPage(i)
+				# append page content to list
+				text_lst.append('\n' + pageObj.extractText())
+			# close the PDF file object
+			py_pdf_file.close()
+			# join all pages text into single string variable
+			text_temp = " ".join(text_lst)
+			#return text + text_temp
+			return text_temp
+
 		def pdfminer(pdf_file):
 			# extract text from pdf
 			text = extract_text(pdf_file)
 			return text
-		pdfminer(pdf_file)
-	
+		text = pypdf2(pdf_file)
+
 if int(choice) == 2:
-	docx_path = input('Enter Docx path\n')
+	docx_path = input('Enter Docx path')
 	if docx_path != '':
 		text=docx2txt.process(docx_path)
 
@@ -77,5 +98,7 @@ def blooms(text):
 	print("The paper has %d questions that come under the category of creation."%c6)
 
 	l2=sorted(l1)
+
+	audio_ouput = None
 
 blooms(text)
