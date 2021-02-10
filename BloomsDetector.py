@@ -5,7 +5,8 @@ from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
 import docx2txt
 
-l1 = None
+
+
 choice = input("Type of file\n1. PDF\n2. Word Document\n")
 
 if int(choice) == 1:
@@ -54,7 +55,6 @@ def blooms(text):
 	nltk_tokens = nltk.word_tokenize(text)
 	#print(nltk_tokens)
 
-	c1=c2=c3=c4=c5=c6=0
 
 	level1=["choose","define",'find','how','label','list','match','name','omit','recall','relate','select','show',
 	'spell','tell','what','why','when','who','where','which']
@@ -74,10 +74,13 @@ def blooms(text):
 	'delete','design','develop','discuss','elaborate','estimate','formulate','happen','imagine',
 	'improve','invent','make up','maximize','minimize','modify','original','originate','plan',
 	'predict','propose','solution','solve','suppose','test','theory']
+	
+	global c1,c2,c3,c4,c5,c6
+	c1=c2=c3=c4=c5=c6=0
 
 	for i in nltk_tokens:
 	    if i in level1:
-	        c1+=1
+	        c1 += 1
 	    elif i in level2:
 	        c2+=1
 	    elif i in level3:
@@ -88,7 +91,6 @@ def blooms(text):
 	        c5+=1
 	    elif i in level6:
 	        c6+=1
-	l1=[c1,c2,c3,c4,c5,c6]
 
 	print("\n")
 	print("The paper has %d questions that come under the category of remember."%c1)
@@ -97,8 +99,11 @@ def blooms(text):
 	print("The paper has %d questions that come under the category of analysis."%c4)
 	print("The paper has %d questions that come under the category of evaluate."%c5)
 	print("The paper has %d questions that come under the category of creation."%c6)
-
-	l2=sorted(l1)
+	
+	global l1
+	l1 = [c1,c2,c3,c4,c5,c6]
+	global l2 
+	l2 = sorted(l1)
 
 	paper_level = None
 	if l2[-1]==c1:
