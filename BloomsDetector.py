@@ -52,9 +52,14 @@ if int(choice) == 2:
 		text=docx2txt.process(docx_path)
 
 def blooms(text):
-	nltk_tokens = nltk.word_tokenize(text)
-	#print(nltk_tokens)
-
+	nltk_tokens = nltk.word_tokenize(text) 
+	#nltk_tokens = nltk.word_tokenize(usr.lower(text))
+	nltk_l_tokens = []
+	for x in nltk_tokens:
+		nltk_l_tokens.append(x.lower()) 
+		
+	print(nltk_tokens)
+	print(nltk_l_tokens)
 
 	level1=["choose","define",'find','how','label','list','match','name','omit','recall','relate','select','show',
 	'spell','tell','what','why','when','who','where','which']
@@ -78,7 +83,8 @@ def blooms(text):
 	global c1,c2,c3,c4,c5,c6
 	c1=c2=c3=c4=c5=c6=0
 
-	for i in nltk_tokens:
+	
+	for i in nltk_l_tokens:
 	    if i in level1:
 	        c1 += 1
 	    elif i in level2:
