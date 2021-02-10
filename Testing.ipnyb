@@ -1,0 +1,4 @@
+from BloomsDetector import l1
+import matplotlib.pyplot as plt
+range = (0,max(l1))
+

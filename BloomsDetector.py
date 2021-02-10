@@ -5,6 +5,7 @@ from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
 import docx2txt
 
+l1 = None
 choice = input("Type of file\n1. PDF\n2. Word Document\n")
 
 if int(choice) == 1:

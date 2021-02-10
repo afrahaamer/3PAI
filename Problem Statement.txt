@@ -11,7 +11,7 @@ Input:
     # Subjects chosen
 
 # Create class Subject
-    # Intelligence  ?
+    # Intelligence  
     # Interest      Float
 
 # Create class Teacher
