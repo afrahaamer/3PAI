@@ -101,17 +101,17 @@ def blooms(text):
 
 	paper_level = None
 	if l2[-1]==c1:
-	    paper_level = "So, the paper is of level 1, you can remember the subject and attempt"
+	    paper_level = 1 # "So, the paper is of level 1, you can remember the subject and attempt"
 	if l2[-1]==c2:
-	    paper_level ="Hence, the paper is of level 2, you have to understand the concept"
+	    paper_level = 2 #"Hence, the paper is of level 2, you have to understand the concept"
 	if l2[-1]==c3:
-	    paper_level = "So, paper is of level 3, you have to know the application."
+	    paper_level = 3 #"So, paper is of level 3, you have to know the application."
 	if l2[-1]==c4:
-	    paper_level = "Hence, paper is of level 4, you need to be able to analyze the subject"
+	    paper_level = 4 #"Hence, paper is of level 4, you need to be able to analyze the subject"
 	if l2[-1]==c5:
-	    paper_level = "So,the paper is of level 5, you need to be thorough with the concepts for evaluation."
+	    paper_level = 5 #"So,the paper is of level 5, you need to be thorough with the concepts for evaluation."
 	if l2[-1]==c6:
-	    paper_level = "Hence, paper is of level 6, you can only attempt if you master the subject"
-	print("\n",paper_level)
+	    paper_level = 6 #"Hence, paper is of level 6, you can only attempt if you master the subject"
+	print("\nPaper Level = ",paper_level)
 
 blooms(text)
