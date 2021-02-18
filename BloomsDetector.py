@@ -7,11 +7,11 @@ import docx2txt
 
 
 
-choice = input("Type of file\n1. PDF\n2. Word Document\n")
+choice = input("Type of file\n1. PDF\n2. Word Document\nEnter your choice: ")
 
 if int(choice) == 1:
 	# path to PDF file
-	pdf_file = input('Enter PDF path')
+	pdf_file = input('Enter PDF path: ')
 	if pdf_file != '':
 		# obtain file name 
 		base = os.path.basename(pdf_file)
@@ -47,7 +47,7 @@ if int(choice) == 1:
 		text = pypdf2(pdf_file)
 
 if int(choice) == 2:
-	docx_path = input('Enter Docx path')
+	docx_path = input('Enter Docx path: ')
 	if docx_path != '':
 		text=docx2txt.process(docx_path)
 
@@ -99,12 +99,12 @@ def blooms(text):
 	        c6+=1
 
 	print("\n")
-	print("The paper has %d questions that come under the category of remember."%c1)
-	print("The paper has %d questions that come under the category of understand."%c2)
-	print("The paper has %d questions that come under the category of application."%c3)
-	print("The paper has %d questions that come under the category of analysis."%c4)
-	print("The paper has %d questions that come under the category of evaluate."%c5)
-	print("The paper has %d questions that come under the category of creation."%c6)
+	print("Level 1 - Remember: %d "%c1)
+	print("Level 2 - Understand: %d "%c2)
+	print("Level 3 - Application: %d "%c3)
+	print("Level 4 - Analysis: %d "%c4)
+	print("Level 5 - Evaluate: %d "%c5)
+	print("Level 6 - Creation: %d "%c6)
 	
 	global l1
 	l1 = [c1,c2,c3,c4,c5,c6]
