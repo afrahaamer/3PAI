@@ -1,0 +1,26 @@
+class student 
+	ocean
+	riasec
+	chosen_subjects = [s_Math,s_Science]
+
+class subject:
+	cei
+	blooms taxonomy
+
+s_Math = subject()
+
+def blooms_detector():
+
+	return blooms_val
+		
+
+
+
+	
+
+class teacher 
+
+ocean calculator
+
+riasec calculator
+
