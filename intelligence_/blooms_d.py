@@ -103,13 +103,13 @@ def blooms(choice, file_name):
 	    elif i in level6:
 	        c6+=1
 
-	print("\n")
-	print("Level 1 - Remember: %d "%c1)
-	print("Level 2 - Understand: %d "%c2)
-	print("Level 3 - Application: %d "%c3)
-	print("Level 4 - Analysis: %d "%c4)
-	print("Level 5 - Evaluate: %d "%c5)
-	print("Level 6 - Creation: %d "%c6)
+	# print("\n")
+	# print("Level 1 - Remember: %d "%c1)
+	#print("Level 2 - Understand: %d "%c2)
+	# print("Level 3 - Application: %d "%c3)
+	#print("Level 4 - Analysis: %d "%c4)
+	#print("Level 5 - Evaluate: %d "%c5)
+	#print("Level 6 - Creation: %d "%c6)
 	
 	global l1
 	l1 = [c1,c2,c3,c4,c5,c6]
