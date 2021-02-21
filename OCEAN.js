@@ -110,20 +110,20 @@ var prompts = [
     }
     
     // For each possible value, create a button for each to be inserted into each li of the quiz
-    // function createValueButtons() {
+    function createValueButtons() {
         
-    // 	for (var li_index = 0; li_index < prompts.length; li_index++) {
-    // 		for (var i = 0; i < prompt_values.length; i++) {
-    // 			var val_button = document.createElement('button');
-    // 			var val_text = document.createTextNode(prompt_values[i].value);
+        for (var li_index = 0; li_index < prompts.length; li_index++) {
+     		for (var i = 0; i < prompt_values.length; i++) {
+     			var val_button = document.createElement('button');
+     			var val_text = document.createTextNode(prompt_values[i].value);
     
-    // 			val_button.setAttribute('class', 'value-btn btn ' + prompt_values[i].class);
-    // 			val_button.appendChild(val_text);
+     			val_button.setAttribute('class', 'value-btn btn ' + prompt_values[i].class);
+     			val_button.appendChild(val_text);
     
-    // 			document.getElementsByClassName('prompt')[li_index].appendChild(val_button);
-    // 		}
-    // 	}
-    // }
+     			document.getElementsByClassName('prompt')[li_index].appendChild(val_button);
+     		}
+     	}
+     }
     function createValueButtons() {
         for (var li_index = 0; li_index < prompts.length; li_index++) {
             var group = document.createElement('div');
@@ -177,8 +177,29 @@ var prompts = [
         }
     
         return weight;
-    }
+    } 
+    /*
+    function ocean_calculate(prompts, group, values, value) {
+        // var p_weight, v_weight = 0;
+        var o_total,c_total,e_total,a_total,n_total = 0.0;
+        /*for (var i = 0; i < prompts.length; i++) {
+            if (prompts[i].class === group) {
+                p_weight = prompts[i].weight;
 
+            if (values[i].value === value) {
+                v_weight = values[i].weight;
+            } 
+        } 
+
+        o_total = ((prompts[4] + (8 - prompts[9]))/2) * (100/7)
+        c_total = ((prompts[2] + (8 - prompts[7]))/2) * (100/7)
+        e_total = ((prompts[0] + (8 - prompts[5]))/2) * (100/7)
+        a_total = ((prompts[6] + (8 - prompts[1]))/2) * (100/7)
+        n_total = ((prompts[8] + (8 - prompts[3]))/2) * (100/7)
+        return weight;
+    } */
+   
+// /*      
     // When user clicks a value to agree/disagree with the prompt, display to the user what they selected
     $('.value-btn').mousedown(function () {
         var classList = $(this).attr('class');
@@ -194,6 +215,8 @@ var prompts = [
         if($(this).hasClass('active')) {
             $(this).removeClass('active');
             total -= (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $(this).text()));
+            
+        
         } else {
             // $('[class='thisgroup).prop('checked', false);
             total -= (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $('.'+this_group+'.active').text()));
@@ -205,22 +228,24 @@ var prompts = [
             $(this).addClass('active');
             total += (findPromptWeight(prompts, this_group) * findValueWeight(prompt_values, $(this).text()));
         }
-    
+    // */
         console.log(total);
     })
     
-    
+   
+
     
     $('#submit-btn').click(function () {
         // After clicking submit, add up the totals from answers
         // For each group, find the value that is active
+
         $('.results').removeClass('hide');
         $('.results').addClass('show');
-        
+   
         if(total < 0) {
-            // document.getElementById('intro-bar').style.width = ((total / 60) * 100) + '%';
-            // console.log(document.getElementById('intro-bar').style.width);
-            // document.getElementById('intro-bar').innerHTML= ((total / 60) * 100) + '%';
+            document.getElementById('intro-bar').style.width = ((total / 60) * 100) + '%';
+            console.log(document.getElementById('intro-bar').style.width);
+            document.getElementById('intro-bar').innerHTML= ((total / 60) * 100) + '%';
             document.getElementById('results').innerHTML = '<b>You are introverted!</b><br><br>\
             Introverts are tricky to understand, since it’s so easy for us to assume that introversion is the same as being shy, when, in fact, introverts are simply people who find it tiring to be around other people.\n\
     <br><br>\
@@ -245,6 +270,7 @@ var prompts = [
     <br><br>\
     Ambiverts exhibit both extroverted and introverted tendencies. This means that they generally enjoy being around people, but after a long time this will start to drain them. Similarly, they enjoy solitude and quiet, but not for too long. Ambiverts recharge their energy levels with a mixture of social interaction and alone time.'
         }
+  
     
         // Hide the quiz after they submit their results
         $('#quiz').addClass('hide');
@@ -260,4 +286,5 @@ var prompts = [
     
         $('.results').addClass('hide');
         $('.results').removeClass('show');
+    
     })
