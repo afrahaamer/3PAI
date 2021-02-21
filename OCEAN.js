@@ -2,95 +2,94 @@
 
 var prompts = [
     {
-        prompt: 'I find it difficult to introduce myself to people',
+        prompt: 'Extraverted, enthusiastic',
         weight: -1,
         class: 'group0'
     },
     {
-        prompt: 'I get so lost in my thoughts I ignore or forget my surroundings',
-        weight: -1,
+        prompt: 'Critical, quarrelsome',
+        weight: 1,
         class: 'group1'
     },
     {
-        prompt: 'I do not usually initiate conversations',
+        prompt: 'Dependable, self-disciplined',
         weight: -1,
         class: 'group2'
     },
     {
-        prompt: 'I prefer not to engage with people who seem angry or upset',
-        weight: -1,
+        prompt: 'Anxious, easily upset',
+        weight: 1,
         class: 'group3'
     },
     {
-        prompt: 'I choose my friends carefully',
+        prompt: 'Open to new experiences, complex',
         weight: -1,
         class: 'group4'
     },
     {
-        prompt: 'I find it difficult to tell stories about myself',
-        weight: -1,
+        prompt: 'Reserved, quiet',
+        weight: 1,
         class: 'group5'
     },
     {
-        prompt: 'I am usually highly motivated and energetic',
-        weight: 1,
+        prompt: 'Sympathetic, warm',
+        weight: -1,
         class: 'group6'
     },
     {
-        prompt: 'I find it easy to walk up to a group of people and join in conversation',
+        prompt: 'Disorganized, careless',
         weight: 1,
         class: 'group7'
     },
     {
-        prompt: 'Being adaptable is more important than being organized',
-        weight: 1,
+        prompt: 'Calm, emotionally stable',
+        weight: -1,
         class: 'group8'
     },
     {
-        prompt: 'I care more about making sure no one gets upset than winning a debate',
+        prompt: 'Conventional, uncreative',
         weight: 1,
         class: 'group9'
-    },
-    {
-        prompt: 'I often do not feel I have to justify myself to people',
-        weight: 1,
-        class: 'group10'
-    },
-    {
-        prompt: 'I would rather improvise than spend time coming up with a detailed plan',
-        weight: 1,
-        class: 'group11'
     }
-    
     ]
-    
+
     // This array stores all of the possible values and the weight associated with the value. 
     // The stronger agreeance/disagreeance, the higher the weight on the user's answer to the prompt.
     var prompt_values = [
     {
         value: 'Strongly Agree', 
         class: 'btn-default btn-strongly-agree',
-        weight: 5
+        weight: 7
     },
     {
-        value: 'Agree',
+        value: 'Agree', 
+        class: 'btn-default btn-strongly-agree',
+        weight: 6
+    },
+    {
+        value: 'Somewhat Agree',
         class: 'btn-default btn-agree',
-        weight: 3,
+        weight: 5
     }, 
     {
         value: 'Neutral', 
         class: 'btn-default',
-        weight: 0
+        weight: 4
+    },
+    {
+        value: 'Somewhat Disagree', 
+        class: 'btn-default btn-strongly-agree',
+        weight: 3
     },
     {
         value: 'Disagree',
         class: 'btn-default btn-disagree',
-        weight: -3
+        weight: 2
     },
     { 
         value: 'Strongly Disagree',
         class: 'btn-default btn-strongly-disagree',
-        weight: -5
+        weight: 1
     }
     ]
     
@@ -179,7 +178,7 @@ var prompts = [
     
         return weight;
     }
-    
+
     // When user clicks a value to agree/disagree with the prompt, display to the user what they selected
     $('.value-btn').mousedown(function () {
         var classList = $(this).attr('class');
