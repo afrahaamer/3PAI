@@ -11,8 +11,21 @@ message = """<html>
 '''
 
 f.write("""<html>
-<head></head>
-<body><p>Hello World!</p></body>
+ <body>
+   <h1>Form Page</h1>
+
+   <form method=GET>
+    <fieldset>
+   <legend>SAMPLE FORM</legend>
+   <ul>
+    <li>First Name: <input name='first'></li>
+    <li>Last Name:  <input name='last'></li>
+   </ul>
+   <input type='submit' value='Submit Form'>
+   </fieldset>
+   </form>
+
+ </body>
 </html>""")
 f.close()
 
