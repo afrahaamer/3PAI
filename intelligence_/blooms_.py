@@ -43,7 +43,7 @@ def main():
 
 			def pdfminer(pdf_file):
 				# extract text from pdf
-				text = extract_text(pdf_file)
+				global text = extract_text(pdf_file)
 				return text
 			text = pypdf2(pdf_file)
 
@@ -51,7 +51,7 @@ def main():
 		# docx_path = input('Enter Docx path: ')
 		docx_path = sys.argv[1]
 		if docx_path != '':
-			text=docx2txt.process(docx_path)
+			global text=docx2txt.process(docx_path)
 
 def blooms_val(text):
 	nltk_tokens = nltk.word_tokenize(text) 
