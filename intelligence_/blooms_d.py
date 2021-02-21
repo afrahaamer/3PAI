@@ -4,15 +4,18 @@ import nltk
 from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
 import docx2txt
-import sys
 
 
-def main():
+choice = int()
+file_name = ""
+
+def blooms(choice, file_name):	
 	# choice = input("Type of file\n1. PDF\n2. Word Document\nEnter your choice: ")
+
 	if int(choice) == 1:
 		# path to PDF file
 		# pdf_file = input('Enter PDF path: ')
-		pdf_file = str(sys.argv[2])
+		pdf_file = file_name
 		if pdf_file != '':
 			# obtain file name 
 			base = os.path.basename(pdf_file)
@@ -43,17 +46,17 @@ def main():
 
 			def pdfminer(pdf_file):
 				# extract text from pdf
-				global text = extract_text(pdf_file)
+				text = extract_text(pdf_file)
 				return text
 			text = pypdf2(pdf_file)
 
 	if int(choice) == 2:
+		docx_path = file_name
 		# docx_path = input('Enter Docx path: ')
-		docx_path = sys.argv[1]
 		if docx_path != '':
-			global text=docx2txt.process(docx_path)
+			text=docx2txt.process(docx_path)
 
-def blooms_val(text):
+
 	nltk_tokens = nltk.word_tokenize(text) 
 	#nltk_tokens = nltk.word_tokenize(usr.lower(text))
 	nltk_l_tokens = []
@@ -99,7 +102,7 @@ def blooms_val(text):
 	        c5+=1
 	    elif i in level6:
 	        c6+=1
-	
+
 	print("\n")
 	print("Level 1 - Remember: %d "%c1)
 	print("Level 2 - Understand: %d "%c2)
@@ -112,7 +115,7 @@ def blooms_val(text):
 	l1 = [c1,c2,c3,c4,c5,c6]
 	global l2 
 	l2 = sorted(l1)
-	
+
 	paper_level = None
 	if l2[-1]==c1:
 	    paper_level = 1 # "So, the paper is of level 1, you can remember the subject and attempt"
@@ -128,9 +131,3 @@ def blooms_val(text):
 	    paper_level = 6 #"Hence, paper is of level 6, you can only attempt if you master the subject"
 	# print("\nPaper Level = ",paper_level)
 	return(l1,paper_level)
-
-if __name__ == '__main__':
-	choice = int(sys.argv[1])
-	main()
-	blooms_val(text)
-	
