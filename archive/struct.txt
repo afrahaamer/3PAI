@@ -9,8 +9,7 @@ class subject:
 
 s_Math = subject()
 
-def blooms_detector():
-
+def blooms_():
 	return blooms_val
 		
 
