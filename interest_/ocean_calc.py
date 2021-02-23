@@ -60,6 +60,4 @@ def ocean_calc():
     oceanVals[4] = ((ocean[8] + (8 - ocean[3]))/2) * (100/7)
     return oceanVals
 
-
-
 print(ocean_calc())
