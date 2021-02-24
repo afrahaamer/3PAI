@@ -1,4 +1,4 @@
-import pyttsx3
+# import pyttsx3
 import os
 import nltk
 from PyPDF2 import PdfFileReader
@@ -61,7 +61,7 @@ def blooms(text):
 	#print(nltk_tokens)
 	#print(nltk_l_tokens)
 
-	level1=["choose","define",'find','how','label','list','match','name','omit','recall','relate','select','show',
+	level1=["define",'find','how','label','list','match','name','omit','recall','relate','select','show',
 	'spell','tell','what','why','when','who','where','which']
 	level2=['classify','compare','contrast','demonstrate','explain','extend','illustrate','infer',
 	'interpret','outline','relate','rephrase','show','summarize','translate']
