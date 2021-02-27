@@ -5,8 +5,6 @@ from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
 import docx2txt
 
-
-
 choice = input("Type of file\n1. PDF\n2. Word Document\nEnter your choice: ")
 
 if int(choice) == 1:
@@ -61,7 +59,7 @@ def blooms(text):
 	#print(nltk_tokens)
 	#print(nltk_l_tokens)
 
-	level1=["define",'find','how','label','list','match','name','omit','recall','relate','select','show',
+	level1=["choose","define",'find','how','label','list','match','name','omit','recall','relate','select','show',
 	'spell','tell','what','why','when','who','where','which']
 	level2=['classify','compare','contrast','demonstrate','explain','extend','illustrate','infer',
 	'interpret','outline','relate','rephrase','show','summarize','translate']
