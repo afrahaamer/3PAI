@@ -1,11 +1,9 @@
-import pyttsx3
+# import pyttsx3
 import os
 import nltk
 from PyPDF2 import PdfFileReader
 from pdfminer.high_level import extract_text
 import docx2txt
-
-
 
 choice = input("Type of file\n1. PDF\n2. Word Document\nEnter your choice: ")
 
